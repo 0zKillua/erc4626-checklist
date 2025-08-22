@@ -136,4 +136,16 @@ _Created by [@solthodox](https://twitter.com/solthodox) and [@MaslarovK](https:/
 - `G5`- If implementing external protocols, did the doing following the recommendations in the documentation?
 - `G6`- Does the test suite have fuzz-tests as well?
 
+[Rounding issues](https://x.com/sammyaudits/status/1831615410573136327)
+Quick rounding checklist for ERC4626 vaults to avoid protocol loss
 
+Round up when:
+- calculating protocol fee
+- calculating `assets` in `mint()` 
+- calculating `shares` in `withdraw()` 
+
+Round down when:
+- calculating `shares` in `deposit()`
+- calculating `assets` in `redeem()`
+- implementing `convertToAssets()` and `convertToShares()` public functions
+- 
